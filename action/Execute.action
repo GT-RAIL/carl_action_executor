@@ -1,0 +1,11 @@
+# Define the goal
+bool execute_all    # set to true to execute all actions in the list (until an error occurs), otherwise execute just the first
+---
+# Define the result
+bool success                                        # true if action(s) executed successfully
+uint8 error                                         # error code as defined in carl_action_executor/GeneralAction
+carl_action_executor/GeneralAction failed_action    # the action that failed, if an error occurred
+---
+# Define feedback message
+uint8 current_action        # current executing action, as defined in carl_action_executor/GeneralAction message
+uint16 actions_remaining    # number of actions remaining to be executed
