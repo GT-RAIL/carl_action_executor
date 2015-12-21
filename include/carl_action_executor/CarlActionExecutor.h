@@ -25,12 +25,12 @@
 #include <carl_action_executor/InsertAction.h>
 #include <carl_action_executor/RemoveAction.h>
 #include <carl_dynamixel/LookAtFrame.h>
-#include <carl_moveit/ArmAction.h>
-#include <carl_moveit/PickupAction.h>
-#include <carl_moveit/StoreAction.h>
 #include <carl_navigation/MoveCarlAction.h>
 #include <move_base_msgs/MoveBaseAction.h>
+#include <rail_manipulation_msgs/ArmAction.h>
+#include <rail_manipulation_msgs/PickupAction.h>
 #include <rail_manipulation_msgs/SegmentedObjectList.h>
+#include <rail_manipulation_msgs/StoreAction.h>
 #include <std_srvs/Empty.h>
 
 class CarlActionExecutor
@@ -57,9 +57,9 @@ private:
 
   actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> moveBaseClient;
   actionlib::SimpleActionClient<carl_navigation::MoveCarlAction> moveCarlClient;
-  actionlib::SimpleActionClient<carl_moveit::ArmAction> armActionClient;
-  actionlib::SimpleActionClient<carl_moveit::PickupAction> pickupClient;
-  actionlib::SimpleActionClient<carl_moveit::StoreAction> storeClient;
+  actionlib::SimpleActionClient<rail_manipulation_msgs::ArmAction> armActionClient;
+  actionlib::SimpleActionClient<rail_manipulation_msgs::PickupAction> pickupClient;
+  actionlib::SimpleActionClient<rail_manipulation_msgs::StoreAction> storeClient;
 
   actionlib::SimpleActionServer<carl_action_executor::ExecuteAction> executeServer;
 

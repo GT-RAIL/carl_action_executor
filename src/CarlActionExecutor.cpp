@@ -163,8 +163,8 @@ unsigned char CarlActionExecutor::executeSingleAction(const carl_action_executor
 
     case carl_action_executor::GeneralAction::READY_ARM:
     {
-      carl_moveit::ArmGoal readyArmGoal;
-      readyArmGoal.action = carl_moveit::ArmGoal::READY;
+      rail_manipulation_msgs::ArmGoal readyArmGoal;
+      readyArmGoal.action = rail_manipulation_msgs::ArmGoal::READY;
       armActionClient.sendGoal(readyArmGoal);
       while (!armActionClient.getState().isDone()) {
         if (executeServer.isPreemptRequested()) {
@@ -186,8 +186,8 @@ unsigned char CarlActionExecutor::executeSingleAction(const carl_action_executor
 
     case carl_action_executor::GeneralAction::RETRACT_ARM:
     {
-      carl_moveit::ArmGoal retractArmGoal;
-      retractArmGoal.action = carl_moveit::ArmGoal::RETRACT;
+      rail_manipulation_msgs::ArmGoal retractArmGoal;
+      retractArmGoal.action = rail_manipulation_msgs::ArmGoal::RETRACT;
       armActionClient.sendGoal(retractArmGoal);
       while (!armActionClient.getState().isDone()) {
         if (executeServer.isPreemptRequested()) {
@@ -211,7 +211,7 @@ unsigned char CarlActionExecutor::executeSingleAction(const carl_action_executor
       //if no object name was specified, grasp at the given manipulation pose instead
       if (action.object_name.empty())
       {
-        carl_moveit::PickupGoal pickupGoal;
+        rail_manipulation_msgs::PickupGoal pickupGoal;
         pickupGoal.lift = true;
         pickupGoal.verify = false;  //note: for now pickups are unverified always, because CARL can't do this.  If possible, change this to always verify pickups.
         pickupGoal.pose = action.manipulation_pose;
@@ -247,7 +247,7 @@ unsigned char CarlActionExecutor::executeSingleAction(const carl_action_executor
           if (recognizedObjects.objects[i].name == objectName)
           {
             ROS_INFO("Found object, attempting pickup...");
-            carl_moveit::PickupGoal pickupGoal;
+            rail_manipulation_msgs::PickupGoal pickupGoal;
             pickupGoal.lift = true;
             pickupGoal.verify = false;  //note: for now pickups are unverified always, because CARL can't do this.  If possible, change this to always verify pickups.
 
@@ -289,7 +289,7 @@ unsigned char CarlActionExecutor::executeSingleAction(const carl_action_executor
 
     case carl_action_executor::GeneralAction::STORE:
     {
-      carl_moveit::StoreGoal storeGoal;
+      rail_manipulation_msgs::StoreGoal storeGoal;
       storeGoal.store_pose = action.manipulation_pose;
 
       storeClient.sendGoal(storeGoal);
