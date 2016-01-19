@@ -71,7 +71,7 @@ include_directories(
 
 ## Declare a cpp executable
 add_executable(carl_action_executor src/CarlActionExecutor.cpp)
-add_dependencies(carl_action_executor carl_action_execution_gencpp)
+add_dependencies(carl_action_executor carl_action_executor_gencpp)
 target_link_libraries(carl_action_executor ${catkin_LIBRARIES})
 
 #############
