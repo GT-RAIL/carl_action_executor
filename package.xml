@@ -4,14 +4,14 @@
   <version>0.0.1</version>
   <description>Sequential action execution for the CARL robot.</description>
 
-  <maintainer email="davidkent@wpi.edu">David Kent</maintainer>
-  <author email="davidkent@wpi.edu">David Kent</author>
+  <maintainer email="dekent@gatech.edu">David Kent</maintainer>
+  <author email="dekent@gatech.edu">David Kent</author>
 
   <license>BSD</license>
 
   <url type="website">http://ros.org/wiki/carl_action_executor</url>
-  <url type="bugtracker">https://github.com/WPI-RAIL/carl_action_executor/issues</url>
-  <url type="repository">https://github.com/WPI-RAIL/carl_action_executor</url>
+  <url type="bugtracker">https://github.com/GT-RAIL/carl_action_executor/issues</url>
+  <url type="repository">https://github.com/GT-RAIL/carl_action_executor</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
